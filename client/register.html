@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link 
+    rel="stylesheet" 
+    href="style.css"
+  >
+</head>
+
+<body>
+  <div class="card">
+
+    <p class="welcome-text">Register Here</p>
+    <p class="subtitle">Fills Your Details</p>
+
+    <form id="registerForm">
+      <div class="input-container">
+
+        <label>
+        <div class="name">
+            <p>Name</p> 
+            <input 
+              type="text" 
+              name="name"
+              placeholder="Enter Your Full Name"
+              required
+            >
+        </div>
+        </label>
+
+        <label>
+        <div class="email">
+            <p>Email</p> 
+            <input 
+              type="email" 
+              name="email"
+              placeholder="Enter Your Email"
+              required
+            >
+        </div>
+        </label>
+
+        <label>
+          <div class="password">
+            <p>Password</p>
+            <input 
+              type="password"
+              name="password" 
+              placeholder="Enter Your Password"
+              required
+            >
+          </div>
+        </label>
+
+        <label>
+        <div class="confirm-password">
+            <p>Confirm Password</p> 
+            <input 
+              type="password" 
+              name="confirmPassword"
+              placeholder="Confirm Your Password"
+              required
+            >
+        </div>
+        </label>
+        
+        <button 
+          class="register-btn"
+          type="submit"
+        > Register  </button>
+      </div> 
+    </form>
+
+    <div id="click-here">Already Have an Account ?<br>
+      <a href="login.html">Click Here to Login</a>
+    </div>
+
+  </div>
+  <script src="register.js"></script>
+</body>
+</html>
