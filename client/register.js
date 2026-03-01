@@ -42,7 +42,7 @@ registerForm.addEventListener("submit", async (e) => {
       "Account Created Dear ! Redirecting to Login...";
     setTimeout(() => {
       window.location.href = "/login.html";
-    }, 1000);
+    }, 5000);
   } catch (error) {
     console.log(error);
     registerMessage.textContent = "Server error... Please try again later";

@@ -6,12 +6,7 @@ import { errorHandler } from "./middlewares/error.js";
 
 const server = express();
 
-server.use(
-  cors({
-    origin: "http://127.0.0.1:5500",
-    methods: ["GET", "POST"],
-  }),
-);
+server.use(cors());
 server.use(express.json());
 
 await userSchema();

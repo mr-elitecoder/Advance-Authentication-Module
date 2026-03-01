@@ -32,6 +32,9 @@ const insertUser = async ({ name, email, passwordHash }) => {
   const sql = "INSERT INTO users (name , email , password_hash) VALUES(?,?,?)";
 
   const params = [name, email, passwordHash];
+  console.log(params);
+  return db.run(sql, params);
+
   /* SQL injection Risk 
         I used it previously but Again return db.run(`
         INSERT INTO users(name,email,password_hash)
@@ -50,8 +53,6 @@ const insertUser = async ({ name, email, passwordHash }) => {
 
     The Risk: A hacker could type a command into the "username" box, and your server would run that command. They could delete your entire users table.
     */
-
-  return db.run(sql, params);
 };
 
 export { findUserByEmail, insertUser };

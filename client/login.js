@@ -10,9 +10,10 @@ loginForm.addEventListener("submit", async (e) => {
   const password = formData.get("password");
 
   loginMessage.textContent = "";
+  console.log("login form selected");
 
   try {
-    const response = await fetch("/api/auth/login", {
+    const response = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -25,6 +26,7 @@ loginForm.addEventListener("submit", async (e) => {
 
         JSON: The language we both speak.
     */
+    console.log("request fetched success");
 
     const data = await response.json();
 
@@ -39,7 +41,7 @@ loginForm.addEventListener("submit", async (e) => {
 
     setTimeout(() => {
       window.location.href = "dashboard.html";
-    }, 1000); // our protected page
+    }, 5000); // our protected page
   } catch (error) {
     console.log(error);
     loginMessage.textContent = "Server error. Please try again Later";

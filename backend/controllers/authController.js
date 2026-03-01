@@ -3,10 +3,10 @@ import { authenticateUser, registerUser } from "../services/authService.js";
 const register = async (req, res, next) => {
   try {
     const { name, email, password, confirmPassword } = req.body;
-
+    console.log(name, email, password, confirmPassword);
     if (!name || !email || !password || password != confirmPassword)
       return res.status(400).json({ message: "Invalid input" });
-
+    console.log("controller Passed the request to Services");
     await registerUser({ name, email, password });
 
     res.status(201).json({ message: "Account Created" });

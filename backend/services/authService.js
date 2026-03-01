@@ -1,9 +1,7 @@
 import { findUserByEmail, insertUser } from "../repos/userRepo.js";
 import { hashPassword, comparePassword } from "../utils/password.js";
 
-const registerUser = async ({ username, userEmail, password }) => {
-  const name = username;
-  const email = userEmail;
+const registerUser = async ({ name, email, password }) => {
   const exist = await findUserByEmail(email);
 
   if (exist) throw new Error("USER_EXISTS");
